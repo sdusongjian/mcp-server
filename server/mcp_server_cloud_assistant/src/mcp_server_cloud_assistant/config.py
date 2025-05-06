@@ -15,9 +15,9 @@ class CloudAssistantConfig:
 def load_config() -> CloudAssistantConfig:
     """Load configuration from environment variables."""
     config = CloudAssistantConfig(
-        volcengine_endpoint=os.environ["VOLC_ENDPOINT"],
-        volcengine_ak=os.environ["VOLC_ACCESSKEY"],
-        volcengine_sk=os.environ["VOLC_SECRETKEY"],
+        volcengine_endpoint=os.environ["VOLCENGINE_ENDPOINT"],
+        volcengine_ak=os.environ["VOLCENGINE_ACCESS_KEY"],
+        volcengine_sk=os.environ["VOLCENGINE_SECRET_KEY"],
         session_token=""
     )
 
@@ -27,7 +27,7 @@ def load_config() -> CloudAssistantConfig:
 def get_auth_config(ak, sk, session_token) -> CloudAssistantConfig:
     """Load configuration from auth and environment variables."""
     config = CloudAssistantConfig(
-        volcengine_endpoint=os.environ["VOLC_ENDPOINT"],
+        volcengine_endpoint=os.environ["VOLCENGINE_ENDPOINT"],
         volcengine_ak=ak,
         volcengine_sk=sk,
         session_token=session_token,
